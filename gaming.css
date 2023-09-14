@@ -851,7 +851,7 @@ header .action .search input{
         position: relative;
         width: 400px;
         min-height: 100vh;
-        /* padding: 6px 1px; */
+        padding: 6px 1px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -984,8 +984,17 @@ header .action .search input{
         box-shadow: 0 0 5px var(--third-color);
         transition: .3s;
     }
+    .card {
+    width: 75%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 2500px;
+    transition: .5s;
+}
     .contact {
-        /* padding: 20px 100px; */
+        
         width: 100%;
         min-height: 50vh;
         display: flex;
