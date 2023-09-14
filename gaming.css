@@ -836,9 +836,9 @@ header .action .search input{
 
 
 
-@media (min-width: 320px) and (max-width: 430px){
+@media (max-width: 767px){
     hr{
-        width: 144%;
+        width: 100%;
     }
 
     .banner {
@@ -883,21 +883,9 @@ header .action .search input{
         /* height: 500px; */
         filter: drop-shadow(0 0 10px #1aeeef );
     }
-    hr{
-        width: 144px;
-    }
+
 
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
