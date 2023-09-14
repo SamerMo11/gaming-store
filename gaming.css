@@ -1006,7 +1006,7 @@ header .action .search input{
     transition: .5s;
 }
     .contact {
-        
+        padding: 20px 0px;
         width: 100%;
         min-height: 50vh;
         display: flex;
