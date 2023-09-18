@@ -273,6 +273,7 @@ header .action .search input{
     text-decoration: none;
     color: #050e2d;
     background-color: #1aeeef;
+    border: 2px solid transparent;
     /* background-image: linear-gradient(to top ,#4750f4,#41d5f1,#ef7ef6); */
     padding: 10px 20px;
     border-radius: 10px;
@@ -528,10 +529,12 @@ header .action .search input{
     margin: 20px 0;
     font-weight: 700;
     letter-spacing: 1px;
+    border: 1px solid transparent;
+
 }
 .info a:hover{
     background-color: transparent;
-    color: #fff;
+    color: #1aeeef;
     border: 1px solid #1aeeef;
     box-shadow: 0 0 10px #1aeeef;
 }
@@ -647,7 +650,197 @@ header .action .search input{
     transform: translate3d(0%,-20%,100px);
 }
  /* -------------------end-games----------------------------- */ 
+ .pc-games{
+    padding: 0px 100px;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px auto;
+ }
+ .pc-games h2{
+    color: #1aeeef;
+    margin: 10px 0;
+    border: #1aeeef solid 3px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px #1aeeef;
+    cursor: pointer;
+ }
 
+.pc-games .cardbx{
+    width: 100%;
+    height: auto;
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+}
+.pc-games .cardbx .card{
+    flex-direction: column;
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+    /* margin: 20px 40px; */
+    background: #1b2141;
+    overflow: hidden;
+    /* border: #1aeeef 2px solid; */
+    position: relative;
+    transition: .5s;
+}
+.pc-games .cardbx .card:hover{
+    transform: scale( 1.1);
+}
+.pc-games .cardbx .card::after{
+    content: "";
+    height: 100%;
+    width: 3px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    /* background-image: linear-gradient( to top , black 50% , #1aeeef 100% ); */
+    background-color: #1aeeef;
+    /* background-image: linear-gradient(to top ,#4750f4,#ef7ef6,#41d5f1); */
+
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 100;
+    animation: card-left 1.5s linear infinite;
+}
+@keyframes card-left {
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(100%);
+    }
+}
+.pc-games .cardbx .card::before{
+    content: "";
+    height: 100%;
+    width: 3px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    /* background-image: linear-gradient( to top , black 50% , #1aeeef 100% ); */
+    background-color: #1aeeef;
+    /* background-image: linear-gradient(to top ,#4750f4,#ef7ef6,#41d5f1); */
+
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 100;
+    animation: card-right 1.5s linear infinite;
+}
+@keyframes card-right {
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(-100%);
+    }
+}
+
+
+
+/* .games .cardbx .card:hover img{
+filter: blur(0px);
+} */
+.pc-games .cardbx .card img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    /* filter: blur(3px); */
+    transition: .5s;
+    /* border: 5px solid red; */
+
+
+}
+.pc-games .cardbx .card img:hover{
+    /* filter: blur(0px); */
+    /* filter: grayscale(1.5); */
+    filter: drop-shadow(0 0 15px #1aeeef);
+    
+    
+}
+.pc-games .cardbx .card .content{
+    padding: 10px;
+    /* border: 5px solid red; */
+}
+.pc-games .cardbx .card .content h4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    /* font-size: 20px; */
+}
+.pc-games .cardbx .card .content .progres-line{
+    position: relative;
+    height: 10px;
+    width: 100%;
+    background: #35407e;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    border-radius: 10px;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate .5s cubic-bezier(1,0,0.5,1) forwards;
+}
+.pc-games .cardbx .card .content .progres-line span{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    background: #1aeeef;
+    box-shadow: 0 0 10px #1aeeef;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate .5s cubic-bezier(1,0,0.5,1) forwards;
+    animation-delay: .5s;
+}
+@keyframes animate{
+    100%{
+        transform: scaleX(1);
+    }
+}
+
+.pc-games .cardbx .card .info{
+    /* border-top: 2px solid #35407e; */
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pc-games .cardbx .card .info p {
+    font-size: 1em ;
+    color: #fff;
+}
+.pc-games .cardbx .card .info p span{
+    color: #1aeeef;
+}
+.pc-games .cardbx .card .info a {
+    display: inline-block;
+    text-decoration: none;
+    color: #35407e;
+    background-color: #1aeeef;
+    /* background-image: linear-gradient(to top ,#4750f4,#41d5f1,#ef7ef6); */
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: .3s;
+    /* margin: 20px 0; */
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.pc-games .cardbx .card .info a:hover{
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #1aeeef;
+    box-shadow: 0 0 10px #1aeeef;
+}
 
 /* <!-- -----------------------start-contact--------------------------------------- --> */
 
@@ -1094,6 +1287,12 @@ header .action .search input{
         font-size: 20px;
         margin: 0px auto;
     }
+
+
+
+
 }
+
+
 
 
