@@ -72,7 +72,7 @@ header{
     top: 0;
     left: 0;
     width: 100%;
-    padding: 10px 100px;
+    padding: 20px 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -123,7 +123,7 @@ header ul li a{
     width:0px;
     background-color: var(--third-color);
     position: absolute;
-    bottom: -20px;
+    bottom: -30px;
     left: 0px;
     transition: .3s ease;
    
@@ -131,18 +131,18 @@ header ul li a{
    header ul li a:hover::after{
     width:100%;
    }
-/* .toggle{
-        position: relative;
-        width: 40%;
-        height: 30px;
-        background: url(open.png) ;
-        filter: drop-shadow(0px 0px 10px var(--third-color));
-        background-position: center;
-        background-size: 30px;
-        background-repeat: no-repeat;
-        cursor: pointer;
-        z-index: 101;
-    } */
+   /* .toggle{
+    position: relative;
+    width: 40%;
+    height: 30px;
+    background: url(open.png) ;
+    filter: drop-shadow(0px 0px 10px var(--third-color));
+    background-position: center;
+    background-size: 30px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 101;
+} */
 /* header ul li a{
     color: #fff;
     text-decoration: none;
@@ -157,7 +157,7 @@ header ul li a:hover{
     color: #fff;
     box-shadow: 0 0 10px #1aeeef;
 } */
-header .action .search{
+/* header .action .search{
     padding: 5px ;
     margin: 5px;
     display: flex;
@@ -171,7 +171,7 @@ header .action .search input{
     border: none ;
     font-size: 1em;
     color: #222;
-}
+} */
 /* -------------------end-navbar----------------------------- */
 
 /* -------------------start-home----------------------------- */
@@ -274,17 +274,16 @@ header .action .search input{
     color: #050e2d;
     background-color: #1aeeef;
     /* background-image: linear-gradient(to top ,#4750f4,#41d5f1,#ef7ef6); */
-
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     transition: .5s;
     margin: 20px 0;
     font-weight: 700;
     letter-spacing: 1px;
 }
 .about .contentbx a:hover{
-    background-image: linear-gradient(0deg,transparent);
-    color: #1b2141;
+    background:transparent;
+    color: #1aeeef;
     border: 2px solid #1aeeef;
     box-shadow: 0 0 10px #1aeeef;
 }
@@ -647,11 +646,8 @@ header .action .search input{
     /* width: 120%; */
     transform: translate3d(0%,-20%,100px);
 }
- /* -------------------end-pc-games----------------------------- */ 
+ /* -------------------end-games----------------------------- */ 
 
- /* -------------------start-mobile-games----------------------------- */ 
- 
-/* <!-- -----------------------end-mobile-games--------------------------------------- --> */
 
 /* <!-- -----------------------start-contact--------------------------------------- --> */
 
@@ -664,7 +660,7 @@ header .action .search input{
     justify-content: center;
 }
 .contact img{
-    height: 100%;
+    /* height: 100%; */
     width: 50%;
     border-radius: 10px;
     border: #1aeeef solid 2px;
@@ -708,12 +704,13 @@ header .action .search input{
     justify-content: space-between;
     width: 100%;
 }
-.contact .form .send p {
+.contact .form .copy {
     color: #fff;
     width: fit-content;
     font-size: 20px;
+    margin: 10px auto;
 }
-.contact .form .send p span{
+.contact .form  .copy span{
     color: #1aeeef;
 }
 
@@ -736,9 +733,30 @@ header .action .search input{
 }
 .contact .form .send input:hover{
     background: #1aeeef;
-    border: none;
+    border:2px solid #1aeeef ;
     color: #050e2d;
     box-shadow: 0 0 15px #1aeeef;
+}
+.contact .form .send .social{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact .form .send .social a{
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1aeeef;
+    transition: .3s;
+    transform: scale(1.5);
+
+}
+.contact .form .send a:hover{
+    filter: grayscale(25);
+
 }
 
 /* -------------Responsive---------------------------------/ */
@@ -775,12 +793,12 @@ header .action .search input{
     }
     .toggle{
         position: relative;
-        width: 30px;
-        height: 30px;
+        width: 40%;
+        height: 40px;
         background: url(open.png) ;
         filter: drop-shadow(0px 0px 10px var(--third-color));
         background-position: center;
-        background-size: 30px;
+        background-size: 40px;
         background-repeat: no-repeat;
         cursor: pointer;
         z-index: 101;
@@ -788,7 +806,7 @@ header .action .search input{
     .toggle.active{
         background: url(close.png) ;
         background-position: center;
-        background-size: 30px;
+        background-size: 40px;
         background-repeat: no-repeat;
     }
     header .nav {
@@ -847,7 +865,23 @@ header .action .search input{
 }
 
 
+
+/* --------------------------------------------- */
 @media (max-width: 767px){
+    header{
+        padding: 10px 10px;
+    }
+    header ul li a::after{
+        content: '';
+        height:3px;
+        width:0px;
+        background-color: var(--third-color);
+        position: absolute;
+        bottom: -10px;
+        left: 0px;
+        transition: .3s ease;
+       
+       }
 
     .banner {
         position: relative;
@@ -960,17 +994,24 @@ header .action .search input{
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 200px;
+        width: calc(100% / 4 );
         letter-spacing: 1px;
         font-weight: 800;
         text-decoration: none;
         transition: .5s;
         animation: slideLeft 1.5s ease forwards;
         font-size: 20px;
-        padding: 28px 30px;
+        padding: 20px 0px;
         box-shadow: 0 0 25px var(--primary-color);
         cursor: pointer;
     }
+    #mob-only{
+        width: 100px;
+    }
+    #all-games{
+        box-shadow: 0 0 25px var(--third-color);
+    }
+
     .games .games-sec {
         width: 100%;
         min-height: 100%;
@@ -997,27 +1038,30 @@ header .action .search input{
         transition: .3s;
     }
     .card {
-    width: 75%;
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    perspective: 2500px;
-    transition: .5s;
-}
+        width: 75%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        perspective: 2500px;
+        transition: .5s;
+    }
     .contact {
         padding: 20px 0px;
-        width: 100%;
-        min-height: 50vh;
+        width:100%;
+        /* min-height: 50vh; */
         display: flex;
         align-items: center;
         justify-content: center;
     }
     .contact img {
-        height: 100%;
-        width: 100%;
+        /* height: 100%; */
+        width: 90%;
         border-radius: 10px;
         border: #1aeeef solid 2px;
+    }
+    .contact .form{
+        width: 90%;
     }
     .contact .form .send {
         padding: 0px -4px;
@@ -1050,148 +1094,6 @@ header .action .search input{
         font-size: 20px;
         margin: 0px auto;
     }
-
-
-
-
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .all{
-    position: relative;
-    overflow: hidden;
-}
-.all .span1{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    border-radius: 50px;
-  
-    height: 5px;
-    background-image: linear-gradient( to right , #000 50% , var(--third-color) );
-    animation: span-1 2s linear infinite;
-  }
-  @keyframes span-1 {
-    0%{
-        transform: translateX(-100%);
-    }
-    100%{
-        transform: translateX(100%);
-    }
-  }
-  .all .span2{
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 5px;
-    border-radius: 50px;
-  
-    height: 100%;
-    background-image: linear-gradient( to bottom , var(--third-color)  , #000 50%);
-    animation: span-2 2s linear infinite;
-    animation-delay: 2s;
-  }
-  @keyframes span-2 {
-    0%{
-        transform: translateY(-100%);
-    }
-    100%{
-        transform: translateY(100%);
-    }
-  }
-  .all .span3{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    border-radius: 50px;
-  
-    height: 5px;
-    background-image: linear-gradient( to left , #000 50% ,var(--third-color) );
-    animation: span-3 4s linear infinite;
-  }
-  @keyframes span-3 {
-    0%{
-        transform: translateX(100%);
-    }
-    100%{
-        transform: translateX(-100%);
-    }
-  }
-  .all .span4{
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 5px;
-    border-radius: 50px;
-    height: 100%;
-    background-image: linear-gradient( to top , var(--third-color) 50% , #000);
-    animation: span-4 2s linear infinite;
-    animation-delay: 6s;
-  
-  }
-  @keyframes span-4 {
-    0%{
-        transform: translateY(100%);
-    }
-    100%{
-        transform: translateY(-100%);
-    }
-  } */
-
-
-
-
-
-
-
-
-
-
-
-
-/* .all{
-    overflow: hidden;
-}
-.all::before{
-    content: "";
-    width: 10%;
-    top: 0;
-    left: 0;
-    background-color: var(--third-color);
-    height: 150%;
-    position: absolute;
-    animation-name: test ;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-}
-@keyframes test {
-    0%{
-        transform: rotate(0deg) ;
-    }
-    100%{
-        transform: rotate(-360deg) ;
-    }
-} */
